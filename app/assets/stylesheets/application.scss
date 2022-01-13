@@ -13,3 +13,37 @@
  *= require_tree .
  *= require_self
  */
+
+ /* Nav */
+
+li {
+  list-style-type: none;
+}
+
+.logo {
+  max-width: 100px;
+}
+
+.navLink {
+  list-style-type: none;
+  text-decoration: none;
+  color: #3BBAB5;
+  transition: color 250ms ease;
+}
+
+.navLink:hover,
+.navActive {
+  color: var(--color-accent);
+}
+
+/* End Nav */
+
+ /* Colors */
+:root {
+  --color-light:  #fff;
+  --color-dark:   #000;
+  --color-text:   #0C0C0C;
+  --color-accent: #E57D22;
+  --color-link:   #3BBAB5;
+}
+/* End Colors */
