@@ -1,7 +1,66 @@
-<h2>Pay With Bitcoin</h2>
-<p>
-  The time is now: <%= Time.now %>
-</p>
+      <h1 className='pb-2 mb-4 fw-bold'>
+        Your Adventure Awaits
+      </h1>
+
+      <div className='row'>
+        <div className='col-4'>
+          <% @stores.each do %>
+            <%= image_tag('logo.png', class: 'd-block py-3 logo', alt: 'bitcoin jungle logo')%>
+            image={phImage1}
+            price={29}
+            priceRetail={49}
+            tag={'Relaxing'}
+            title='Private Cabana'
+            description='Find your inner peace at this adults-only secluded cabana area. Complimentary drinks and transportation to and from nearby hotels included in ticket price.'
+          />
+        </div>
+        <div className='col-4'>
+            image={phImage2}
+            price={199}
+            priceRetail={249}
+            tag={'Active'}
+            title='Beach Volleyball'
+            description='Reserve this special area of a pristine beach to play a few games by the hour.  Channel your inner Tom Cruise and re-enact your favorite scene from Top Gun!'
+          />
+        </div>
+        <div className='col-4'>
+            image={phImage3}
+            price={29}
+            priceRetail={49}
+            tag={'Explore'}
+            title='Wildlife Experience'
+            description='Check out the wildlife reserve and take a picture with your favorite Toucan or Parrot!'
+          />
+        </div>
+        <div className='col-4'>
+            image={phImage4}
+            price={19}
+            priceRetail={25}
+            tag={'Active'}
+            title='Personal Training'
+            description={`Join up with a local trainer and do some high intensity interval training on the beach.  You'll exercise with free weights, swimming, and running.`}
+          />
+        </div>
+        <div className='col-4'>
+            image={phImage5}
+            price={49}
+            priceRetail={59}
+            tag={'Food and Drink'}
+            title='Local Beer Flight'
+            description='Sit back, relax, and enjoy the draughts.  Pick from a selection of over 50 local craft beers and make a flight of 3, 5, or 7.'
+          />
+        </div>
+        <div className='col-4'>
+            image={phImage6}
+            price={29}
+            priceRetail={49}
+            tag={'Food and Drink'}
+            title='Learn to Bake'
+            description='Learn how to bake from scratch with local Costa Rica exclusive ingredients.  Your cupcakes will be out of this world!'
+          />
+        </div>
+      </div>
+    </>
 
 <%# add json metadata line with order id, we'll store product data %>
 <%# either render json from btcpayserver or store orders on our server %>
