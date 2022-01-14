@@ -1,6 +1,6 @@
 namespace :seed do
   task :stores_and_products => [ :environment ] do
-    raise "Don't run this in production!" if Rails.env.production?
+    # raise "Don't run this in production!" if Rails.env.production?
 
     Store.create!(
       name: 'Casa Tortuga',
