@@ -1,66 +1,60 @@
-      <h1 className='pb-2 mb-4 fw-bold'>
+  <div class='my-3'>
+    <div class='container'>
+      <h1 class='pb-2 mb-4 fw-bold'>
         Your Adventure Awaits
       </h1>
 
-      <div className='row'>
-        <div className='col-4'>
-          <% @stores.each do %>
-            <%= image_tag('logo.png', class: 'd-block py-3 logo', alt: 'bitcoin jungle logo')%>
-            image={phImage1}
-            price={29}
-            priceRetail={49}
-            tag={'Relaxing'}
-            title='Private Cabana'
-            description='Find your inner peace at this adults-only secluded cabana area. Complimentary drinks and transportation to and from nearby hotels included in ticket price.'
-          />
-        </div>
-        <div className='col-4'>
-            image={phImage2}
-            price={199}
-            priceRetail={249}
-            tag={'Active'}
-            title='Beach Volleyball'
-            description='Reserve this special area of a pristine beach to play a few games by the hour.  Channel your inner Tom Cruise and re-enact your favorite scene from Top Gun!'
-          />
-        </div>
-        <div className='col-4'>
-            image={phImage3}
-            price={29}
-            priceRetail={49}
-            tag={'Explore'}
-            title='Wildlife Experience'
-            description='Check out the wildlife reserve and take a picture with your favorite Toucan or Parrot!'
-          />
-        </div>
-        <div className='col-4'>
-            image={phImage4}
-            price={19}
-            priceRetail={25}
-            tag={'Active'}
-            title='Personal Training'
-            description={`Join up with a local trainer and do some high intensity interval training on the beach.  You'll exercise with free weights, swimming, and running.`}
-          />
-        </div>
-        <div className='col-4'>
-            image={phImage5}
-            price={49}
-            priceRetail={59}
-            tag={'Food and Drink'}
-            title='Local Beer Flight'
-            description='Sit back, relax, and enjoy the draughts.  Pick from a selection of over 50 local craft beers and make a flight of 3, 5, or 7.'
-          />
-        </div>
-        <div className='col-4'>
-            image={phImage6}
-            price={29}
-            priceRetail={49}
-            tag={'Food and Drink'}
-            title='Learn to Bake'
-            description='Learn how to bake from scratch with local Costa Rica exclusive ingredients.  Your cupcakes will be out of this world!'
-          />
-        </div>
+      <div class='row'>
+        <% @stores.each do |store| %>
+          <% product = store.products.first %>
+          <% image_path = image_path('wildlifeExperience.jpg') %>
+          <%# extract this into partial %>
+          <div class='col-4'>
+            <div class='tile'>
+              <div
+                class='tileImage'
+                style="background-image: url(<%= image_path %>)"
+              /></div>
+
+              <div class='px-4 pb-4 tileText'>
+                <div class='tileHeightWrapper'>
+                  <p class='fs-6'>
+                    <%# make category (bg-danger) dynamic %>
+                    <span class='badge rounded-pill bg-danger'>
+                      <%= product.category %>
+                    </span>
+                  </p>
+                  <h3 class='mt-1 mb-2 fw-bold'>
+                    <%= store.name %>
+                  </h3>
+                  <p class='opacity-75'>
+                    <%= product.description %>
+                  </p>
+                </div>
+                <div class='mb-4'>
+                  <p class='fs-6 opacity-50 mt-4'>
+                    Price
+                  </p>
+                  <p class='fs-4 fw-bold'>
+                    <%= product.amount.present? ? "#{"%.2f" % product.amount} #{store.currency}" : 'Contact for price'  %>
+                    <%# change to use dynamic currency symbol %>
+                    <%# # <span class='fs-5 fw-normal opacity-50'><del>${priceRetail}</del></span> %>
+                  </p>
+                </div>
+
+                <button
+                  type="button"
+                  class="btn btn-primary w-100"
+                >
+                  Book Now
+                </button>
+              </div>
+            </div>
+          </div>
+        <% end %>
       </div>
-    </>
+    </div>
+  </div>
 
 <%# add json metadata line with order id, we'll store product data %>
 <%# either render json from btcpayserver or store orders on our server %>
@@ -91,7 +85,6 @@
             event.preventDefault();
             var xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function() {
-                debugger
                 if (this.readyState == 4 && this.status == 200 && this.responseText) {
                     window.btcpay.showInvoice(JSON.parse(this.responseText).invoiceId);
                 }

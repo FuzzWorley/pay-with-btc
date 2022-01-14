@@ -20,21 +20,18 @@
               <ul class='row'>
                 <%# need to get hover styles working %>
                 <li class='col'>
-                  <%= link_to 'Home', root_path, class: 'navLink' %>
+                  <%= link_to 'Home', root_path, class: "navLink #{active_class(root_path)}" %>
                 </li>
                 <li class='col'>
-                  <%= link_to 'About', nil, class: 'navLink' %>
+                  <%= link_to 'About', nil, class: "navLink #{active_class('about')}" %>
                 </li>
                 <li class='col'>
-                  <%= link_to 'Privacy', nil, class: 'navLink' %>
+                  <%= link_to 'Privacy', nil, class: "navLink #{active_class('privacy')}" %>
                   </a>
                 </li>
               </ul>
             </div>
           </div>
-        </div>
-        <div class='my-3'>
-          <%# <HomepageTiles /> %>
         </div>
       </div>
     </div>
