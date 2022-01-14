@@ -1,12 +1,11 @@
   <div class='my-3'>
     <div class='container'>
       <h1 class='pb-2 mb-4 fw-bold'>
-        Your Adventure Awaits
+        Your Adventure Awaits | Pay With Bitcoin
       </h1>
 
       <div class='row'>
-        <% @stores.each do |store| %>
-          <% product = store.products.first %>
+        <% @products.each do |product| %>
           <% image_path = product.image.present? ? rails_blob_url(product.image) : image_path('wildlifeExperience.jpg') %>
           <%# extract this into partial %>
           <div class='col-4'>
@@ -24,7 +23,7 @@
                     </span>
                   </p>
                   <h3 class='mt-1 mb-2 fw-bold'>
-                    <%= store.name %>
+                    <%= product.name %>
                   </h3>
                   <p class='opacity-75'>
                     <%= product.description %>
