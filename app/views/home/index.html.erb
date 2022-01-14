@@ -7,7 +7,7 @@
       <div class='row'>
         <% @stores.each do |store| %>
           <% product = store.products.first %>
-          <% image_path = image_path('wildlifeExperience.jpg') %>
+          <% image_path = product.image.present? ? rails_blob_url(product.image) : image_path('wildlifeExperience.jpg') %>
           <%# extract this into partial %>
           <div class='col-4'>
             <div class='tile'>
