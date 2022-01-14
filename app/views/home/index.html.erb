@@ -19,8 +19,7 @@
               <div class='px-4 pb-4 tileText'>
                 <div class='tileHeightWrapper'>
                   <p class='fs-6'>
-                    <%# make category (bg-danger) dynamic %>
-                    <span class='badge rounded-pill bg-danger'>
+                    <span class='badge rounded-pill <%= pill_class(product.category) %>'>
                       <%= product.category %>
                     </span>
                   </p>
@@ -33,7 +32,8 @@
                 </div>
                 <div class='mb-4'>
                   <p class='fs-6 opacity-50 mt-4'>
-                    Price
+                    <%# Price %>
+                    <%# can fill in later with short blurb about pricing %>
                   </p>
                   <p class='fs-4 fw-bold'>
                     <%= product.formatted_price  %>
