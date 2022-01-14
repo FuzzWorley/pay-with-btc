@@ -36,7 +36,7 @@
                     Price
                   </p>
                   <p class='fs-4 fw-bold'>
-                    <%= product.amount.present? ? "#{"%.2f" % product.amount} #{store.currency}" : 'Contact for price'  %>
+                    <%= product.formatted_price  %>
                     <%# change to use dynamic currency symbol %>
                     <%# # <span class='fs-5 fw-normal opacity-50'><del>${priceRetail}</del></span> %>
                   </p>
