@@ -39,10 +39,19 @@
                     <%# # <span class='fs-5 fw-normal opacity-50'><del>${priceRetail}</del></span> %>
                   </p>
                 </div>
-                <%= render partial: 'rails_admin/main/btcpayserver_button', locals: {
-                  amount: product.amount,
-                  currency: product.store.currency
-                } %>
+                <% if product.variable_pricing? %>
+                  <button
+                    type="button"
+                    class="btn btn-primary w-100"
+                  >
+                    Contact Info
+                  </button>
+                <% else %>
+                  <%= render partial: 'rails_admin/main/btcpayserver_button', locals: {
+                    amount: product.amount,
+                    currency: product.store.currency
+                  } %>
+                <% end %>
               </div>
             </div>
           </div>
