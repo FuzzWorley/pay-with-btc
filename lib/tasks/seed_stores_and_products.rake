@@ -21,13 +21,13 @@ namespace :seed do
 
     Store.create!(
       name: 'Beach Games',
-      currency: 0,
+      currency: 1,
       phone: '+506-5723-0019',
       email: 'beachgames@cr.com'
     )
     Product.create!(
       position: 1,
-      amount: 135000,
+      amount: 49,
       category: 1,
       store_id: Store.second.id,
       variable_pricing: false,
@@ -39,13 +39,13 @@ namespace :seed do
 
     Store.create!(
       name: 'Nature Vibes',
-      currency: 2,
+      currency: 1,
       phone: '+506-4437-8755',
       email: 'naturevibes@cr.com'
     )
     Product.create!(
       position: 2,
-      amount: 89000,
+      amount: 189,
       category: 2,
       store_id: Store.third.id,
       variable_pricing: false,

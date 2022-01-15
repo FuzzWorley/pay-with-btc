@@ -41,4 +41,15 @@ RailsAdmin.config do |config|
     # history_index
     # history_show
   end
+
+  config.model 'Product' do
+    show do
+      configure :btcpayserver_invoice do
+        pretty_value do
+          # change this to render partial for a new model for payment requests instead of invoices
+          bindings[:view].render partial: :btcpayserver_button.to_s, locals: { amount: bindings[:object].amount }
+        end
+      end
+    end
+  end
 end
