@@ -25,12 +25,6 @@ class Product < ApplicationRecord
     end
   end
 
-  def btcpayserver_invoice
-    # change this to work for a new model for payment requests instead of invoices
-    # needed for object to get to rails_admin config
-    self
-  end
-
   private
 
   # add specs for this
