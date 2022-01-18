@@ -16,7 +16,7 @@ gem "pg", "~> 1.1"
 gem "puma", "~> 5.0"
 
 # admin tools / dependencies
-# gem 'rails_admin', ['>= 3.0.0.beta2', '< 4']
+gem "administrate"
 gem "sassc-rails"
 
 # Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]

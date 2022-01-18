@@ -1,0 +1,4 @@
+<% if field.data.present? %>
+  <% attachment = field.data.attachment %>
+  <%= image_tag(rails_blob_path(attachment)) %>
+<% end %>

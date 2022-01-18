@@ -1,0 +1,12 @@
+<div class='field-unit__label'>
+  <%= f.label 'Image' %>
+</div>
+
+<div class='field-unit__field'>
+  <%= f.file_field field.attribute %>
+<div>
+
+<% if field.data.present? %>
+  <% attachment = field.data.attachment %>
+  <%= image_tag(rails_blob_path(attachment)) %>
+<% end %>
