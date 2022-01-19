@@ -10,6 +10,7 @@ class PaymentRequestDashboard < Administrate::BaseDashboard
   ATTRIBUTE_TYPES = {
     product: Field::BelongsTo,
     id: Field::Number,
+    btcpay_server_id: Field::String,
     amount: Field::String,
     title: Field::String,
     email: Field::String,
@@ -36,11 +37,11 @@ class PaymentRequestDashboard < Administrate::BaseDashboard
   SHOW_PAGE_ATTRIBUTES = %i[
     product
     id
+    btcpay_server_id
     amount
     title
     email
     description
-    expiry_date
     created_at
     updated_at
   ].freeze
@@ -54,7 +55,6 @@ class PaymentRequestDashboard < Administrate::BaseDashboard
     title
     email
     description
-    expiry_date
   ].freeze
 
   # COLLECTION_FILTERS
