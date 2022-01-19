@@ -13,8 +13,8 @@ class BtcpayServerApiService
   end
 
   def create_payment_request
-    raise 'amount required' unless amount.present?
-    
+    raise 'amount and server id required' unless amount.present? && btcpay_server_id.present?
+
     HTTParty.post(
       "#{BASE_URI}/#{btcpay_server_id}/payment-requests",
       headers: headers,
