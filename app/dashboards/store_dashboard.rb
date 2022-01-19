@@ -11,7 +11,7 @@ class StoreDashboard < Administrate::BaseDashboard
     products: Field::HasMany,
     admin: Field::BelongsTo,
     id: Field::Number,
-    btcpay_server_id: Field::String,
+    btcpay_server_id: BtcpayServerLinkField,
     name: Field::String,
     currency: Field::Select.with_options(searchable: false, collection: ->(field) { field.resource.class.send(field.attribute.to_s.pluralize).keys }),
     phone: Field::String,

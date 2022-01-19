@@ -30,4 +30,9 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  helpers:
+    label:
+      payment_request:
+        btcpay_server_id: "Payment Request Link"
+      store:
+        btcpay_server_id: "BTCPay Server Link"

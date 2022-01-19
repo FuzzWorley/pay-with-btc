@@ -10,7 +10,7 @@ class PaymentRequestDashboard < Administrate::BaseDashboard
   ATTRIBUTE_TYPES = {
     product: Field::BelongsTo,
     id: Field::Number,
-    btcpay_server_id: Field::String,
+    btcpay_server_id: BtcpayServerLinkField,
     amount: Field::String,
     title: Field::String,
     email: Field::String,

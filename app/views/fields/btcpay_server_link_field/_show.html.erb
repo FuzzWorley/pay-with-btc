@@ -1,0 +1,6 @@
+<% if field.data.present? && field.resource.is_a?(PaymentRequest) %>
+  <%= link_to field.to_payment_request_url, field.to_payment_request_url, target: :_blank %>
+<% elsif field.data.present? && field.resource.is_a?(Store) %>
+  <%= link_to field.to_store_url, field.to_store_url, target: :_blank %>
+<% end %>
+  
