@@ -11,6 +11,7 @@ class StoreDashboard < Administrate::BaseDashboard
     products: Field::HasMany,
     admin: Field::BelongsTo,
     id: Field::Number,
+    btcpay_server_id: Field::String,
     name: Field::String,
     currency: Field::Select.with_options(searchable: false, collection: ->(field) { field.resource.class.send(field.attribute.to_s.pluralize).keys }),
     phone: Field::String,
@@ -35,6 +36,7 @@ class StoreDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = %i[
     id
+    btcpay_server_id
     products
     admin
     name
@@ -51,6 +53,7 @@ class StoreDashboard < Administrate::BaseDashboard
   FORM_ATTRIBUTES = %i[
     products
     admin
+    btcpay_server_id
     name
     currency
     phone
@@ -72,7 +75,7 @@ class StoreDashboard < Administrate::BaseDashboard
   # Overwrite this method to customize how stores are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(store)
-  #   "Store ##{store.id}"
-  # end
+  def display_resource(store)
+    "#{store.name}"
+  end
 end
