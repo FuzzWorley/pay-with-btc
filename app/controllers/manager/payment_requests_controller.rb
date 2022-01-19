@@ -5,7 +5,12 @@ module Manager
     #
 
     def create
+      resource = resource_class.new(resource_params)
+      # need to catch these
+      resource.validate! 
+
       response = BtcpayServerApiService.new(params["payment_request"]).create_payment_request
+      # need to catch these
       raise 'response not successful' unless response["id"].present?
 
       resource = resource_class.new(resource_params.merge!(btcpay_server_id: response["id"]))
