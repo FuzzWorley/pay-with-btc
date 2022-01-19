@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_15_221712) do
+ActiveRecord::Schema.define(version: 2022_01_19_012503) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -58,7 +58,6 @@ ActiveRecord::Schema.define(version: 2022_01_15_221712) do
   create_table "payment_requests", force: :cascade do |t|
     t.string "amount"
     t.string "title"
-    t.string "currency"
     t.string "email"
     t.string "description"
     t.integer "expiry_date"

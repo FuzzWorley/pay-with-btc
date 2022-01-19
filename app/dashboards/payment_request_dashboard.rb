@@ -12,7 +12,6 @@ class PaymentRequestDashboard < Administrate::BaseDashboard
     id: Field::Number,
     amount: Field::String,
     title: Field::String,
-    currency: Field::String,
     email: Field::String,
     description: Field::String,
     expiry_date: Field::Number,
@@ -39,7 +38,6 @@ class PaymentRequestDashboard < Administrate::BaseDashboard
     id
     amount
     title
-    currency
     email
     description
     expiry_date
@@ -54,7 +52,6 @@ class PaymentRequestDashboard < Administrate::BaseDashboard
     product
     amount
     title
-    currency
     email
     description
     expiry_date
