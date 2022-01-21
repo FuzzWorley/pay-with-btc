@@ -35,7 +35,7 @@ class Product < ApplicationRecord
   end
 
   def validate_position_if_featured
-    return if position.present? || featured.false?
+    return if position.present? || featured == false
 
     errors.add(:base, "Must set position if featured.")
   end
